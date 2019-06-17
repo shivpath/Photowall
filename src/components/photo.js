@@ -1,33 +1,23 @@
 import React from 'react';
-
-
+import {Link} from 'react-router-dom';
 
 function Photo(props)
 {
+  console.log(props)
   return  <figure className="figure">
-   <img className="photo" src={props.value.imageLink} alt={props.value.desc} ></img>
+  <Link to={`Single/${props.post.id}`} >
+   <img className="photo" src={props.post.imageLink} alt={props.post.desc} ></img>
+   </Link>
    <figcaption>
-   <p> {props.value.desc} </p>
+   <p> {props.post.desc} </p>
    </figcaption>
    <div className="button-container">
-   <button onClick={()=> props.removePhoto(props)} > Remove</button>
+   <button onClick={() => {
+      props.removePhoto(props.index)
+      props.history.push("/")
+    }
+    } > Remove</button>
    </div>
    </figure>
 }
-
-//
-// class Photo extends Component
-// {
-//   render(){
-//     return  <figure className="figure">
-//      <img className="photo" src={this.props.value.imageLink} alt={this.props.value.desc} ></img>
-//      <figcaption>
-//      <p> {this.props.value.desc} </p>
-//      </figcaption>
-//      <div className="button-container">
-//      <button className="remove-button"> Remove</button>
-//      </div>
-//      </figure>
-//     }
-// }
 export default Photo;

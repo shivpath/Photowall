@@ -6,12 +6,8 @@ html
 
 p
 {
-  font-size: 2rem;
+  font-size: 20px;
   text-align: center;
-}
-button
-{
-
 }
 
 h1
@@ -23,11 +19,6 @@ h1
   color: black;
   margin : 2rem 0;
   letter-spacing: -1px;
-}
-
-img
-{
-  margin-left: 40px;
 }
 
 @font-face {
@@ -51,7 +42,8 @@ img
 .figure
 {
   border: 1px solid #d3d3d3;
-  flex-basis: 33.33%;
+  max-width: 300px;
+  padding-left: 40px;
 
   flex-grow: 1;
   margin: 0 2rem 2rem 2rem;
@@ -130,4 +122,41 @@ button
 button:hover
 {
   border-color: blue;
+}
+.single-photo
+{
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-right: 150px;
+  border: 1px solid black;
+
+}
+
+.Comments
+{
+  max-width: 130px;
+}
+
+.Comments input
+{
+  width: 250px;
+  border: none;
+  background-color: white;
+  border-bottom:  1px dotted grey;
+  margin: 10px 5px 0px;
+}
+.Comments input:hover
+{
+  cursor: pointer;
+  border: 1px dotted grey;
+}
+
+.paragraph
+{
+  text-align: left;
+  font-size: 15px;
+  font-family: Sans-serif;
+  border-bottom:  1px dotted grey;
 }

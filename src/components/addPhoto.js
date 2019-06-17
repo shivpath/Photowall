@@ -15,26 +15,24 @@ handleSubmit(event)
   const imageLink = event.target.elements.Link.value;
   if(desc && imageLink)
   {
-      const post = {
-        id: 0,
-        desc: desc,
-        imageLink: imageLink
-        }
-      this.props.onAddPhoto(post);
+    const post = {
+      id: Number(new Date()),
+      desc: desc,
+      imageLink: imageLink
+      }
+      this.props.addPost(post);
+      this.props.onHistory.push("/");
   }
 }
   render()
   {
     return (
-      <div>
-      <h1> Photowall</h1>
       <div className="form">
       <form onSubmit={this.handleSubmit}>
       <input type="text" placeholder="Link" name="Link"/>
       <input type="text" placeholder="Description" name="Description"/>
       <button>Post</button>
        </form>
-      </div>
       </div>
     )
   }
